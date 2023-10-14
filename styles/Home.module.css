@@ -1,14 +1,11 @@
 
-/**Discover-videos-app - version 1.01  - Home module css - Features:
+/**Discover-videos-app - version 1.02  - Home module css - Features:
  * 
- *      --> Centering container
+ *      --> Clearing styles
  * 
  * Note: Here is added the google font for all the document
 */
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
 }

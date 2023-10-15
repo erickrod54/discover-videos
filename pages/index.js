@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { Banner, Card, Navbar } from '../components'
 
-/**Discover-videos-app - version 1.01  - index js - Features:
+/**Discover-videos-app - version 1.03  - index js - Features:
  * 
- *      --> Editing titles
+ *      --> Building the basic composition
  * 
  * Note: Here is added the google font for all the document
 */
@@ -18,6 +19,11 @@ export default function Home() {
       </Head>
 
       <h1>Netflix Clone App</h1>
+
+      <Navbar/>
+      <Banner/>
+      <Card/>
+
     </div>
   )
 }

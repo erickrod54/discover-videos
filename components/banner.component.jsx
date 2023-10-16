@@ -1,9 +1,9 @@
 import React from "react";
 
 
-/**Discover-videos-app - version 1.04  - Banner js - Features:
+/**Discover-videos-app - version 1.05  - Banner js - Features:
  * 
- *      --> Work in progress building banner.
+ *      --> Adding button placeholder.
  * 
  * Note: so fas props has been passed as placehodlers 
  * from the main component in the index js
@@ -13,7 +13,9 @@ const Banner = (props) => {
 
     const {  title, subtitle, imgUrl } = props;
 
-   
+   const handleOnPlay = () => {
+        console.log('Play!')
+   }
     
     return(
         <>
@@ -24,6 +26,7 @@ const Banner = (props) => {
                 <h3>
                     {subtitle}
                 </h3>
+                <button onClick={handleOnPlay}>Play</button>
             </div>
             <div
                 style={{

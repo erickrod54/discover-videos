@@ -2,9 +2,10 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Banner, Card, Navbar } from '../components'
 
-/**Discover-videos-app - version 1.03  - index js - Features:
+
+/**Discover-videos-app - version 1.04  - index js - Features:
  * 
- *      --> Building the basic composition
+ *      --> Props has been drilled to the component
  * 
  * Note: Here is added the google font for all the document
 */
@@ -19,10 +20,15 @@ export default function Home() {
       </Head>
 
       <h1>Netflix Clone App</h1>
-
-      <Navbar/>
-      <Banner/>
+     
+      <Banner 
+        title='Clifford the red dog' 
+        subtitle='a very cute dog' 
+        imgUrl={'/statics/clifford.the.red.dog.png'}/>
+      {/**
+       * <Navbar/>
       <Card/>
+       */}
 
     </div>
   )

@@ -1,10 +1,9 @@
 import React from "react";
 import styles from '../components/banner.module.css'
 
-/**Discover-videos-app - version 1.06  - Banner js - Features:
+/**Discover-videos-app - version 1.07  - Banner js - Features:
  * 
- *      --> Writting module styles classnames and wrapping
- *          jsx elements.
+ *      --> Applying styles to n Series.
  * 
  * Note: so fas props has been passed as placehodlers 
  * from the main component in the index js
@@ -22,9 +21,17 @@ const Banner = (props) => {
         <div className={styles.container}>
             <div className={styles.leftWrapper}>
                 <div className={styles.left}>
+                    <div className={styles.nseriesWrapper}>
+                        <p>N</p>
+                        <p>S E R I E S</p>
+                    </div>
                     <h2 className={styles.title}>{title}</h2>
-                    <h3 className={styles.subtitle}>{subtitle}</h3>
-                    <button className={styles.btnWithIcon} onClick={handleOnPlay}>Play</button>
+                    <h3 className={styles.subTitle}>{subtitle}</h3>
+                    <button className={styles.btnWithIcon} onClick={handleOnPlay}>
+                        <span className={styles.playText}>
+                         Play  
+                        </span>
+                    </button>
                 </div>
             </div>
             <div

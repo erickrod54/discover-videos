@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css'
 import { Banner, Card, Navbar } from '../components'
 
 
-/**Discover-videos-app - version 1.04  - index js - Features:
+/**Discover-videos-app - version 1.09  - index js - Features:
  * 
- *      --> Props has been drilled to the component
+ *      --> Test props will has been drilled to NavBar
  * 
  * Note: Here is added the google font for all the document
 */
@@ -19,14 +19,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Netflix Clone App</h1>
-     
+      <Navbar username='netseriesuser@gmail.com'/>
       <Banner 
         title='Clifford the red dog' 
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
       {/**
-       * <Navbar/>
+       * 
       <Card/>
        */}
 

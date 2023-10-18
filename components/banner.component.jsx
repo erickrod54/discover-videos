@@ -1,9 +1,12 @@
 import React from "react";
 import styles from '../components/banner.module.css'
+import Image from "next/image";
 
-/**Discover-videos-app - version 1.07  - Banner js - Features:
+/**Discover-videos-app - version 1.08  - Banner js - Features:
  * 
- *      --> Applying styles to n Series.
+ *      --> Adding the 'play.arrow.svg'.
+ * 
+ *      --> Implementing image component.
  * 
  * Note: so fas props has been passed as placehodlers 
  * from the main component in the index js
@@ -28,6 +31,7 @@ const Banner = (props) => {
                     <h2 className={styles.title}>{title}</h2>
                     <h3 className={styles.subTitle}>{subtitle}</h3>
                     <button className={styles.btnWithIcon} onClick={handleOnPlay}>
+                        <Image src={'/statics/play.arrow.svg'} alt="Play icon" width={32} height={32}/>               
                         <span className={styles.playText}>
                          Play  
                         </span>

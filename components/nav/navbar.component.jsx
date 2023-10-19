@@ -1,8 +1,8 @@
 import React from "react";
 
-/**Discover-videos-app - version 1.09  - Navbar js - Features:
+/**Discover-videos-app - version 1.10  - Navbar js - Features:
  * 
- *      --> Passing props and start to develop Navbar.
+ *      --> Writting the complete jsx structure.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -16,6 +16,20 @@ const Navbar = (props) => {
         <div>
             Navbar Component
             <p>{username}</p>
+            <ul>
+                <li>Home</li>
+                <li>My List</li>
+            </ul>
+            <nav>
+                <div>
+                    <button>
+                        <p>{username}</p>
+                    </button>
+                    <div>
+                        Sign Out
+                    </div>
+                </div>
+            </nav>
         </div>
     )
 }

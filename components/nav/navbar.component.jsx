@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./navbar.module.css"
 import { useRouter } from "next/router";
+import Link from "next/link";
 
-/**Discover-videos-app - version 1.13  - Navbar js - Features:
+/**Discover-videos-app - version 1.14  - Navbar js - Features:
  * 
- *      --> Implementing 'useRouter' for 'navbarItems'.
+ *      --> Implementing 'Link' for 'Sign out'.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -45,9 +46,9 @@ const Navbar = (props) => {
                     {/**expand more icon */}
                     </button>
                     <div className={styles.navDropdown}>
-                        <a className={styles.linkName}> 
-                            Sign Out
-                        </a>
+                        <Link href='/login' className={styles.linkName}>
+                                Sign Out
+                        </Link>
                         <div className={styles.lineWrapper}></div>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./navbar.module.css"
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-/**Discover-videos-app - version 1.14  - Navbar js - Features:
+/**Discover-videos-app - version 1.15  - Navbar js - Features:
  * 
- *      --> Implementing 'Link' for 'Sign out'.
+ *      --> Implementing dropdown feature.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -17,6 +17,8 @@ const Navbar = (props) => {
 
     const router = useRouter();
 
+    const [ showDropdown, setShowDropDown ] = useState(false);
+
     const handleOnClickHome  = (e) => {
         e.preventDefault()
         router.push('/')
@@ -25,6 +27,12 @@ const Navbar = (props) => {
     const handleOnClickMylist = (e) => {
         e.preventDefault()
         router.push('/browse/my-list')
+    }
+
+    const handleShowDropdown = (e) => {
+        e.preventDefault()
+        setShowDropDown(!showDropdown)
+
     }
 
     return(
@@ -41,16 +49,19 @@ const Navbar = (props) => {
             </ul>
             <nav className={styles.navContainer}>
                 <div>
-                    <button className={styles.usernameBtn}>
+                    <button className={styles.usernameBtn} onClick={handleShowDropdown}>
                         <p className={styles.username}>{username}</p>
                     {/**expand more icon */}
                     </button>
+                    { showDropdown &&
                     <div className={styles.navDropdown}>
                         <Link href='/login' className={styles.linkName}>
                                 Sign Out
                         </Link>
                         <div className={styles.lineWrapper}></div>
                     </div>
+                    
+                    }
                 </div>
             </nav>
             </div>

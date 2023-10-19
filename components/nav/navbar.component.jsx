@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./navbar.module.css"
 
-/**Discover-videos-app - version 1.11  - Navbar js - Features:
+/**Discover-videos-app - version 1.12  - Navbar js - Features:
  * 
- *      --> Writting classNames .
+ *      --> Fixing row appearance for Navbar.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -21,7 +21,6 @@ const Navbar = (props) => {
                     N Series
                     </div>
                 </a>
-            </div>
             <ul className={styles.navItems}>
                 <li className={styles.navItem}>Home</li>
                 <li className={styles.navItem2}>My List</li>
@@ -40,6 +39,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
+            </div>
         </div>
     )
 }

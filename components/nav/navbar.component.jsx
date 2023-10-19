@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./navbar.module.css"
+import { useRouter } from "next/router";
 
-/**Discover-videos-app - version 1.12  - Navbar js - Features:
+/**Discover-videos-app - version 1.13  - Navbar js - Features:
  * 
- *      --> Fixing row appearance for Navbar.
+ *      --> Implementing 'useRouter' for 'navbarItems'.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -12,6 +13,18 @@ import styles from "./navbar.module.css"
 const Navbar = (props) => {
 
     const { username } = props;
+
+    const router = useRouter();
+
+    const handleOnClickHome  = (e) => {
+        e.preventDefault()
+        router.push('/')
+    }
+
+    const handleOnClickMylist = (e) => {
+        e.preventDefault()
+        router.push('/browse/my-list')
+    }
 
     return(
         <div className={styles.container}> 
@@ -22,8 +35,8 @@ const Navbar = (props) => {
                     </div>
                 </a>
             <ul className={styles.navItems}>
-                <li className={styles.navItem}>Home</li>
-                <li className={styles.navItem2}>My List</li>
+                <li className={styles.navItem} onClick={handleOnClickHome}>Home</li>
+                <li className={styles.navItem2} onClick={handleOnClickMylist}>My List</li>
             </ul>
             <nav className={styles.navContainer}>
                 <div>

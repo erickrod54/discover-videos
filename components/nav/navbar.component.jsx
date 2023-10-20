@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styles from "./navbar.module.css"
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
-/**Discover-videos-app - version 1.15  - Navbar js - Features:
+/**Discover-videos-app - version 1.16  - Navbar js - Features:
  * 
- *      --> Implementing dropdown feature.
+ *      --> Implementing image for the logo.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -40,7 +41,7 @@ const Navbar = (props) => {
             <div className={styles.wrapper}>
                 <a className={styles.logoLink} href="/">
                     <div className={styles.logoWrapper}>
-                    N Series
+                        <Image src={'/statics/n.series1.svg'} alt="logo" width={130} height={130}/> 
                     </div>
                 </a>
             <ul className={styles.navItems}>

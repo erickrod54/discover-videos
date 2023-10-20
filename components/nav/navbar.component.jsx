@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-/**Discover-videos-app - version 1.16  - Navbar js - Features:
+/**Discover-videos-app - version 1.17  - Navbar js - Features:
  * 
- *      --> Implementing image for the logo.
+ *      --> Implementing expand more white.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually
@@ -52,6 +52,7 @@ const Navbar = (props) => {
                 <div>
                     <button className={styles.usernameBtn} onClick={handleShowDropdown}>
                         <p className={styles.username}>{username}</p>
+                        <Image src={'/statics/expand.more.white.svg'} alt="logo" width={24} height={24}/>
                     {/**expand more icon */}
                     </button>
                     { showDropdown &&

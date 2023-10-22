@@ -1,10 +1,12 @@
 import Banner from "./banner.component";
-import Card from "./card.component";
+import Card from "./card/card.component";
+
 import Navbar from "./nav/navbar.component";
 
-/**Discover-videos-app - version 1.09  - components > index js - Features:
+
+/**Discover-videos-app - version 1.19  - components > index js - Features:
  * 
- *      --> Updating Navbar import.
+ *      --> Updating Card import.
  * 
  * Note: This is part of the initial composition of the app,
  * after this step every component will developed indiviually

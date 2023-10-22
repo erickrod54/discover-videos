@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css'
 import { Banner, Card, Navbar } from '../components'
 
 
-/**Discover-videos-app - version 1.09  - index js - Features:
+/**Discover-videos-app - version 1.18  - index js - Features:
  * 
- *      --> Test props will has been drilled to NavBar
+ *      --> Uncommenting Card Component
  * 
  * Note: Here is added the google font for all the document
 */
@@ -24,10 +24,7 @@ export default function Home() {
         title='Clifford the red dog' 
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
-      {/**
-       * 
-      <Card/>
-       */}
+       <Card/>
 
     </div>
   )

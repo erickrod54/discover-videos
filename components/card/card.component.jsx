@@ -2,14 +2,12 @@ import Image from "next/image";
 import React from "react";
 import styles from './card.module.css'
 
-/**Discover-videos-app - version 2.00  - Card js - Features:
+/**Discover-videos-app - version 2.01  - Card js - Features:
  * 
- *      --> Fixing image sizing 
+ *      --> Wrapping the image using container 
  * 
- *     --> Adding 'cardImg' 
- * 
- * Note: Fixing image sizing by changing the classMap to 
- * the container
+ * Note: In order to add the pointer and more styles to the 
+ * container
 */
 
 const Card = (props) => {
@@ -24,8 +22,10 @@ const Card = (props) => {
 
 
     return(
-        <div className={classMap[size]} >
-            <Image  src={imgUrl} alt="image" layout="fill" className={styles.cardImg}/>
+        <div className={styles.container}>
+            <div className={classMap[size]} >
+                <Image  src={imgUrl} alt="image" layout="fill" className={styles.cardImg}/>
+            </div>
         </div>
     )
 }

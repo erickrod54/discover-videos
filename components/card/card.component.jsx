@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import styles from './card.module.css'
 
-/**Discover-videos-app - version 2.01  - Card js - Features:
+/**Discover-videos-app - version 2.02  - Card js - Features:
  * 
- *      --> Wrapping the image using container 
+ *      --> Setting a default size 
  * 
  * Note: In order to add the pointer and more styles to the 
  * container
@@ -12,7 +12,7 @@ import styles from './card.module.css'
 
 const Card = (props) => {
 
-    const { imgUrl, size } = props;
+    const { imgUrl, size = 'medium' } = props;
 
     const classMap = {
         large: styles.lgItem,

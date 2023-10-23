@@ -3,9 +3,11 @@ import styles from '../styles/Home.module.css'
 import { Banner, Card, Navbar } from '../components'
 
 
-/**Discover-videos-app - version 1.19  - index js - Features:
+/**Discover-videos-app - version 2.02  - index js - Features:
  * 
- *      --> Adding three Card Components
+ *      --> Removing medium size.
+ * 
+ *      --> Testing default size.
  * 
  * Note: It is a pre test for image sizing
 */
@@ -25,7 +27,7 @@ export default function Home() {
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
        <Card imgUrl='/statics/clifford.the.red.dog.png' size='large'/>
-       <Card imgUrl='/statics/clifford.the.red.dog.png' size='medium'/>
+       <Card imgUrl='/statics/clifford.the.red.dog.png'/>
        <Card imgUrl='/statics/clifford.the.red.dog.png' size='small'/>
 
     </div>

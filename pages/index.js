@@ -3,11 +3,11 @@ import styles from '../styles/Home.module.css'
 import { Banner, Card, Navbar } from '../components'
 
 
-/**Discover-videos-app - version 1.18  - index js - Features:
+/**Discover-videos-app - version 1.19  - index js - Features:
  * 
- *      --> Uncommenting Card Component
+ *      --> Adding three Card Components
  * 
- * Note: Here is added the google font for all the document
+ * Note: It is a pre test for image sizing
 */
 
 export default function Home() {
@@ -24,7 +24,9 @@ export default function Home() {
         title='Clifford the red dog' 
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
-       <Card/>
+       <Card imgUrl='/statics/clifford.the.red.dog.png' size='large'/>
+       <Card imgUrl='/statics/clifford.the.red.dog.png' size='medium'/>
+       <Card imgUrl='/statics/clifford.the.red.dog.png' size='small'/>
 
     </div>
   )

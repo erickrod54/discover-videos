@@ -1,22 +1,29 @@
 import Image from "next/image";
 import React from "react";
+import styles from './card.module.css'
 
-/**Discover-videos-app - version 1.19  - Card js - Features:
+/**Discover-videos-app - version 1.20  - Card js - Features:
  * 
- *      --> Destructuring props
+ *      --> Building 'classMap' 
  * 
- * Note: This is part of the initial composition of the app,
- * after this step every component will developed indiviually
+ * Note: Building 'classMap' to dynamicly change image size 
+ * using size as index
 */
 
 const Card = (props) => {
 
     const { imgUrl, size } = props;
 
+    const classMap = {
+        large: styles.lgItem,
+        medium: styles.mdItem, 
+        small: styles.smItem,
+    }
+
 
     return(
         <div>
-            <Image src={imgUrl} alt="image" width={300} height={300}/>
+            <Image className={classMap[size]} src={imgUrl} alt="image" width={300} height={300}/>
         </div>
     )
 }

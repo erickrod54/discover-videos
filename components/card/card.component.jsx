@@ -2,12 +2,14 @@ import Image from "next/image";
 import React from "react";
 import styles from './card.module.css'
 
-/**Discover-videos-app - version 1.20  - Card js - Features:
+/**Discover-videos-app - version 2.00  - Card js - Features:
  * 
- *      --> Building 'classMap' 
+ *      --> Fixing image sizing 
  * 
- * Note: Building 'classMap' to dynamicly change image size 
- * using size as index
+ *     --> Adding 'cardImg' 
+ * 
+ * Note: Fixing image sizing by changing the classMap to 
+ * the container
 */
 
 const Card = (props) => {
@@ -22,8 +24,8 @@ const Card = (props) => {
 
 
     return(
-        <div>
-            <Image className={classMap[size]} src={imgUrl} alt="image" width={300} height={300}/>
+        <div className={classMap[size]} >
+            <Image  src={imgUrl} alt="image" layout="fill" className={styles.cardImg}/>
         </div>
     )
 }

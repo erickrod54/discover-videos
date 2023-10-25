@@ -27,7 +27,7 @@ export default function Home() {
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
        <Card imgUrl='/statics/clifford.the.red.dog.png' size='large'/>
-       <Card imgUrl='/statics/clifford.the.red.dog.png'/>
+       <Card />
        <Card imgUrl='/statics/clifford.the.red.dog.png' size='small'/>
 
     </div>

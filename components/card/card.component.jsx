@@ -2,19 +2,18 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from './card.module.css'
 
-/**Discover-videos-app - version 2.04  - Card js - Features:
+/**Discover-videos-app - version 2.05  - Card js - Features:
  * 
- *      --> Handling Image Error using 'imgSrc'. 
+ *      --> Setting an external image default (source unplash). 
  * 
- * Note: In order to add the pointer and more styles to the 
- * container
+ * Note: Domain added at 'next.config' file
  * 
  * setting default values is part of Error handling
 */
 
 const Card = (props) => {
 
-    const { imgUrl = '/statics/clifford.the.red.dog.png', size = 'medium' } = props;
+    const { imgUrl = 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', size = 'medium' } = props;
 
     const [ imgSrc, setImgSrc ] = useState(imgUrl)
 
@@ -26,7 +25,7 @@ const Card = (props) => {
 
     const handleOnError = () => {
         console.log('hii error')
-        setImgSrc('/statics/clifford.the.red.dog.png')
+        setImgSrc('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
     }
 
 

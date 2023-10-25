@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import styles from './card.module.css'
+import styles from './card.module.css';
+import { motion } from "framer-motion";
 
-/**Discover-videos-app - version 2.05  - Card js - Features:
+/**Discover-videos-app - version 2.06  - Card js - Features:
  * 
- *      --> Setting an external image default (source unplash). 
+ *      --> Implementing 'motion.div'. 
  * 
- * Note: Domain added at 'next.config' file
- * 
- * setting default values is part of Error handling
+ * Note: This is a feature provided by Framer
+ * react library, has a lot more to explore
 */
 
 const Card = (props) => {
@@ -31,7 +31,9 @@ const Card = (props) => {
 
     return(
         <div className={styles.container}>
-            <div className={classMap[size]} >
+            <motion.div 
+                className={classMap[size]} 
+                whileHover={{ scale: 1.2 }}>
                 <Image  
                     src={imgSrc} 
                     alt="image" 
@@ -39,7 +41,7 @@ const Card = (props) => {
                     onError={handleOnError}
                     className={styles.cardImg}
                     />
-            </div>
+            </motion.div>
         </div>
     )
 }

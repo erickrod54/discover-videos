@@ -2,13 +2,15 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from './card.module.css';
 import { motion } from "framer-motion";
+import cls from 'classnames';
 
-/**Discover-videos-app - version 2.06  - Card js - Features:
+/**Discover-videos-app - version 2.07  - Card js - Features:
  * 
- *      --> Implementing 'motion.div'. 
+ *      --> Applying 'classnames' to make the cascade styles 
+ *          behavior.
  * 
- * Note: This is a feature provided by Framer
- * react library, has a lot more to explore
+ * Note: 'classnames' has a 'shortname convention' of 'cls' 
+ * to make the cascade styles behavior.
 */
 
 const Card = (props) => {
@@ -32,7 +34,7 @@ const Card = (props) => {
     return(
         <div className={styles.container}>
             <motion.div 
-                className={classMap[size]} 
+                className={cls(styles.imgMotionWrapper, classMap[size])} 
                 whileHover={{ scale: 1.2 }}>
                 <Image  
                     src={imgSrc} 

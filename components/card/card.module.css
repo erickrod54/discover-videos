@@ -1,9 +1,19 @@
-/**Discover-videos-app - version 1.20  - card.module.css - Features:
+/**Discover-videos-app - version 2.07  - card.module.css - Features:
  * 
- *      --> Writting card styles
+ *      --> Writting 'imgMotionWrapper' styles 
  * 
- * Note: This file will have attributes as size and more
+ * Note: 'imgMotionWrapper' styles will make the image on hever to take 
+ precedence over the rest
 */
+
+.imgMotionWrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .imgMotionWrapper:hover {
+    z-index: 99;
+  }
 
 .smItem {
     position: relative;

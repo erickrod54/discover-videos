@@ -1,5 +1,6 @@
 import Banner from "./banner.component";
 import Card from "./card/card.component";
+import SectionCards from "./card/section.cards.component";
 
 import Navbar from "./nav/navbar.component";
 
@@ -12,4 +13,4 @@ import Navbar from "./nav/navbar.component";
  * after this step every component will developed indiviually
 */
 
-export { Navbar, Banner, Card }
+export { Navbar, Banner, Card, SectionCards }

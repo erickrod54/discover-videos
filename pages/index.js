@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Banner, Card, Navbar, SectionCards } from '../components'
+import { Banner, Navbar, SectionCards } from '../components'
 
 
-/**Discover-videos-app - version 2.08  - index js - Features:
+/**Discover-videos-app - version 2.09  - index js - Features:
  * 
- *      --> Passing the prop 'title' to the 'SectionCards'
+ *      --> Migrating 'Card' component to 'SectionCards'
  * 
  * Note: It is a pre test for image sizing
 */
@@ -25,10 +25,6 @@ export default function Home() {
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
        <SectionCards title='Disney' />
-       <Card imgUrl='/statics/clifford.the.red.dog.png' size='large'/>
-       <Card />
-       <Card imgUrl='/statics/clifford.the.red.dog.png' size='small'/>
-
     </div>
   )
 }

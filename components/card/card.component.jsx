@@ -4,10 +4,9 @@ import styles from './card.module.css';
 import { motion } from "framer-motion";
 import cls from 'classnames';
 
-/**Discover-videos-app - version 2.07  - Card js - Features:
+/**Discover-videos-app - version 2.10  - Card js - Features:
  * 
- *      --> Applying 'classnames' to make the cascade styles 
- *          behavior.
+ *      --> Changin the scale from the 'Card' to the Y axis.
  * 
  * Note: 'classnames' has a 'shortname convention' of 'cls' 
  * to make the cascade styles behavior.
@@ -35,7 +34,7 @@ const Card = (props) => {
         <div className={styles.container}>
             <motion.div 
                 className={cls(styles.imgMotionWrapper, classMap[size])} 
-                whileHover={{ scale: 1.2 }}>
+                whileHover={{ scaleY: 1.2 }}>
                 <Image  
                     src={imgSrc} 
                     alt="image" 

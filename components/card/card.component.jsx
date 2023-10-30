@@ -4,9 +4,9 @@ import styles from './card.module.css';
 import { motion } from "framer-motion";
 import cls from 'classnames';
 
-/**Discover-videos-app - version 2.11  - Card js - Features:
+/**Discover-videos-app - version 2.12  - Card js - Features:
  * 
- *      --> Writting and 'scale' flow to switch from 1.1 to 1.2.
+ *      --> Switching 'scale' flow to switch from'Y' 1.1 to1.1.
  * 
  *      --> Destructuring 'id' from the props
  * 
@@ -31,7 +31,7 @@ const Card = (props) => {
         setImgSrc('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
     }
 
-    const scale = id === 0 ? { scale: 1.1 } : { scaleY: 1.2 }
+    const scale = id === 0 ? { scaleY: 1.1 } : { scale: 1.1 }
 
     return(
         <div className={styles.container}>

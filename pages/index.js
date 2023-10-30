@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css'
 import { Banner, Navbar, SectionCards } from '../components'
 
 
-/**Discover-videos-app - version 2.09  - index js - Features:
+/**Discover-videos-app - version 2.12  - index js - Features:
  * 
- *      --> Migrating 'Card' component to 'SectionCards'
+ *      --> Wrapping 'SectionCard' using 'sectionWrapper'
  * 
  * Note: It is a pre test for image sizing
 */
@@ -24,7 +24,9 @@ export default function Home() {
         title='Clifford the red dog' 
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
-       <SectionCards title='Disney' />
+        <div className={styles.sectionWrapper}>
+          <SectionCards title='Disney' />
+        </div>
     </div>
   )
 }

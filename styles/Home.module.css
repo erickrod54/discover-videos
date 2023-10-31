@@ -1,11 +1,10 @@
 
-/**Discover-videos-app - version 1.02  - Home module css - Features:
+/**Discover-videos-app - version 2.12  - Home module css - Features:
  * 
- *      --> Clearing styles
+ *      --> Writting 'sectionWrapper'
  * 
  * Note: Here is added the google font for all the document
 */
 
-.container {
-
-}
+.sectionWrapper{
+  margin-top: 1.5rem;}

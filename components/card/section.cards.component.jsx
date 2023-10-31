@@ -1,9 +1,9 @@
 import Card from "./card.component";
 import styles from './section.cards.module.css';
 
-/**Discover-videos-app - version 2.13 - SectionCards- Features:
+/**Discover-videos-app - version 2.14 - SectionCards- Features:
  * 
- *      --> Refactoring 'Card' render.
+ *      --> Reciving 'size' as a prop to change it dynamiclly.
  * 
  * Note: Refactoring 'Card' render in order to receive and render 
  * an array
@@ -12,7 +12,7 @@ import styles from './section.cards.module.css';
 
 const SectionCards = (props) => {
 
-    const { title, videos } = props;
+    const { title, videos, size } = props;
 
     console.log({ videos })
 
@@ -23,7 +23,7 @@ const SectionCards = (props) => {
                 {videos.map((video, index) => {
                     const { imgUrl } = video;
                     return(
-                        <Card key={index} imgUrl={imgUrl} size='large'/>
+                        <Card key={index} imgUrl={imgUrl} size={size}/>
                     )
                 })}
             </div>

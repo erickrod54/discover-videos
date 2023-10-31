@@ -3,11 +3,9 @@ import styles from '../styles/Home.module.css'
 import { Banner, Navbar, SectionCards } from '../components'
 
 
-/**Discover-videos-app - version 2.13  - index js - Features:
+/**Discover-videos-app - version 2.14  - index js - Features:
  * 
- *      --> Writting 'disneyVideos'
- * 
- *      --> Adding 'video' prop to drill 'disneyVideos'
+ *      --> Testing 'size' prop
  * 
  * Note: It is a pre test for image sizing
 */
@@ -25,6 +23,7 @@ export default function Home() {
       imgUrl:'/statics/clifford.the.red.dog.png'
     },
   ]
+
   return (
     <div className={styles.container}>
       <Head>
@@ -39,7 +38,8 @@ export default function Home() {
         subtitle='a very cute dog' 
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
         <div className={styles.sectionWrapper}>
-          <SectionCards title='Disney'  videos={disneyVideos}/>
+          <SectionCards title='Disney'  videos={disneyVideos} size='large'/>
+          <SectionCards title='Productivity'  videos={disneyVideos} size='medium'/>
         </div>
     </div>
   )

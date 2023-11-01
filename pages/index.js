@@ -1,28 +1,20 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Banner, Navbar, SectionCards } from '../components'
+import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.14  - index js - Features:
+/**Discover-videos-app - version 2.15  - index js - Features:
  * 
- *      --> Testing 'size' prop
+ *      --> Invoking 'getVideos()' to get the videos
+ *          from the Youtube API
  * 
  * Note: It is a pre test for image sizing
 */
 
 export default function Home() {
 
-  const disneyVideos = [
-    {
-      imgUrl:'/statics/clifford.the.red.dog.png'
-    },
-    {
-      imgUrl:'/statics/clifford.the.red.dog.png'
-    },
-    {
-      imgUrl:'/statics/clifford.the.red.dog.png'
-    },
-  ]
+  const disneyVideos = getVideos();
 
   return (
     <div className={styles.container}>

@@ -4,17 +4,23 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.15  - index js - Features:
+/**Discover-videos-app - version 2.17  - index js - Features:
  * 
- *      --> Invoking 'getVideos()' to get the videos
- *          from the Youtube API
+ *      --> Building 'getServerSideProps'
  * 
  * Note: It is a pre test for image sizing
 */
 
-export default function Home() {
-
+export async function getServerSideProps() {
   const disneyVideos = getVideos();
+
+  return {
+    props: { disneyVideos }, // will be passed to the page component as props
+  };
+}
+
+export default function Home({ disneyVideos }) {
+  console.log({ disneyVideos });
 
   return (
     <div className={styles.container}>

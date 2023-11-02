@@ -4,9 +4,9 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.18 - index js - Features:
+/**Discover-videos-app - version 2.19 - index js - Features:
  * 
- *      --> Setting 'await getVideos()'
+ *      --> Adding 'Travel' and 'Popular' section
  * 
  * Note: Because the getVideos() change to 'async' when is called
  * will change to 'await'
@@ -38,7 +38,9 @@ export default function Home({ disneyVideos }) {
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
         <div className={styles.sectionWrapper}>
           <SectionCards title='Disney'  videos={disneyVideos} size='large'/>
+          <SectionCards title='Travel'  videos={disneyVideos} size='small'/>
           <SectionCards title='Productivity'  videos={disneyVideos} size='medium'/>
+          <SectionCards title='Popular'  videos={disneyVideos} size='small'/>
         </div>
     </div>
   )

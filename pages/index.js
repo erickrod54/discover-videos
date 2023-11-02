@@ -4,15 +4,16 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.17  - index js - Features:
+/**Discover-videos-app - version 2.18 - index js - Features:
  * 
- *      --> Building 'getServerSideProps'
+ *      --> Setting 'await getVideos()'
  * 
- * Note: It is a pre test for image sizing
+ * Note: Because the getVideos() change to 'async' when is called
+ * will change to 'await'
 */
 
 export async function getServerSideProps() {
-  const disneyVideos = getVideos();
+  const disneyVideos = await getVideos();
 
   return {
     props: { disneyVideos }, // will be passed to the page component as props

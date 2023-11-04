@@ -4,16 +4,16 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.19 - index js - Features:
+/**Discover-videos-app - version 2.20 - index js - Features:
  * 
- *      --> Adding 'Travel' and 'Popular' section
+ *      --> Passing query as a 'prop'
  * 
- * Note: Because the getVideos() change to 'async' when is called
- * will change to 'await'
+ * Note: These are the first steps to control the query in a 
+ * dynamic way
 */
 
 export async function getServerSideProps() {
-  const disneyVideos = await getVideos();
+  const disneyVideos = await getVideos('marvel%20universe%20trailers');
 
   return {
     props: { disneyVideos }, // will be passed to the page component as props

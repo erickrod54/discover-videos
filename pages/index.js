@@ -4,23 +4,35 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getVideos } from '../lib/videos';
 
 
-/**Discover-videos-app - version 2.20 - index js - Features:
+/**Discover-videos-app - version 2.21 - index js - Features:
  * 
- *      --> Passing query as a 'prop'
+ *      --> Passing query 'travelVideos'
+ * 
+ *      --> Passing query 'productivityVideos'
  * 
  * Note: These are the first steps to control the query in a 
  * dynamic way
+ * 
+ * when these changes of query are made sometimes needs to refresh
+ * the page
 */
 
 export async function getServerSideProps() {
-  const disneyVideos = await getVideos('marvel%20universe%20trailers');
+
+  const disneyVideos = await getVideos('marvel universe trailers');
+
+  const travelVideos = await getVideos('travel');
+
+  const productivityVideos = await getVideos('productivity');
+
+  //const popularVideos = await getVideos('marvel universe trailers');
 
   return {
-    props: { disneyVideos }, // will be passed to the page component as props
+    props: { disneyVideos, travelVideos, productivityVideos }, // will be passed to the page component as props
   };
 }
 
-export default function Home({ disneyVideos }) {
+export default function Home({ disneyVideos, travelVideos, productivityVideos }) {
   console.log({ disneyVideos });
 
   return (
@@ -38,8 +50,8 @@ export default function Home({ disneyVideos }) {
         imgUrl={'/statics/clifford.the.red.dog.png'}/>
         <div className={styles.sectionWrapper}>
           <SectionCards title='Disney'  videos={disneyVideos} size='large'/>
-          <SectionCards title='Travel'  videos={disneyVideos} size='small'/>
-          <SectionCards title='Productivity'  videos={disneyVideos} size='medium'/>
+          <SectionCards title='Travel'  videos={travelVideos} size='small'/>
+          <SectionCards title='Productivity'  videos={productivityVideos} size='medium'/>
           <SectionCards title='Popular'  videos={disneyVideos} size='small'/>
         </div>
     </div>

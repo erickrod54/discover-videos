@@ -1,0 +1,28 @@
+/**Discover-videos-app - version 3.03 - login.module.css - Features:
+ * 
+ *      --> Writting login styles
+ * 
+ * Note: by creating the login js i ca start to write and build 
+ * the Login page
+*/
+
+.wrapper {
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+    display: flex;
+    padding: 1.25rem /* 20px */;
+  }
+  
+  .logoLink {
+    display: flex;
+    font-weight: 500;
+    font-size: 1rem;
+    align-items: center;
+    color: var(--white10);
+    margin-bottom: 1rem /* 16px */;
+  }
+  
+  .logoWrapper {
+    color: var(--red);
+    width: 8rem /* 128px */;
+  }

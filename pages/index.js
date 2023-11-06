@@ -1,14 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Banner, Navbar, SectionCards } from '../components'
-import { getVideos } from '../lib/videos';
+import { getPopularVideos, getVideos } from '../lib/videos';
 
-
-/**Discover-videos-app - version 2.21 - index js - Features:
+/**Discover-videos-app - version 3.00 - index js - Features:
  * 
- *      --> Passing query 'travelVideos'
- * 
- *      --> Passing query 'productivityVideos'
+ *      --> Invoking 'getPopularVideos'
  * 
  * Note: These are the first steps to control the query in a 
  * dynamic way
@@ -25,14 +22,14 @@ export async function getServerSideProps() {
 
   const productivityVideos = await getVideos('productivity');
 
-  //const popularVideos = await getVideos('marvel universe trailers');
+  const popularVideos = await getPopularVideos();
 
   return {
-    props: { disneyVideos, travelVideos, productivityVideos }, // will be passed to the page component as props
+    props: { disneyVideos, travelVideos, productivityVideos, popularVideos }, // will be passed to the page component as props
   };
 }
 
-export default function Home({ disneyVideos, travelVideos, productivityVideos }) {
+export default function Home({ disneyVideos, travelVideos, productivityVideos, popularVideos }) {
   console.log({ disneyVideos });
 
   return (
@@ -52,7 +49,7 @@ export default function Home({ disneyVideos, travelVideos, productivityVideos })
           <SectionCards title='Disney'  videos={disneyVideos} size='large'/>
           <SectionCards title='Travel'  videos={travelVideos} size='small'/>
           <SectionCards title='Productivity'  videos={productivityVideos} size='medium'/>
-          <SectionCards title='Popular'  videos={disneyVideos} size='small'/>
+          <SectionCards title='Popular'  videos={popularVideos} size='small'/>
         </div>
     </div>
   )

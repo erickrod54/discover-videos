@@ -3,15 +3,20 @@ import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
 
-/**Discover-videos-app - version 3.03 - login js - Features:
+/**Discover-videos-app - version 3.04 - login js - Features:
  * 
- *      --> getting the logo and starting to style
+ *      --> Writting the login form
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
 */
 
 const Login = () => {
+
+    const handleLoginWithEmail = () => {
+        console.log('Loign with email')
+    }
+
     return (
         <div>
             <Head>
@@ -33,6 +38,22 @@ const Login = () => {
                         </div>
                     </Link>
                 </div>
+
+                <main className={styles.main}>
+                    <div className={styles.mainWrapper}>
+                        <h1 className={styles.signinHeader}>Sign In</h1>
+                        <input 
+                            type="text" 
+                            placeholder="Email address" 
+                            className={styles.emailInput}/>
+
+                        <button 
+                            onClick={handleLoginWithEmail} 
+                            className={styles.loginBtn}>
+                                Sign In
+                        </button>
+                    </div>
+                </main>
             </header>
         </div>
     )

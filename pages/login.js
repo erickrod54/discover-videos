@@ -3,9 +3,9 @@ import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
 
-/**Discover-videos-app - version 3.05 - login js - Features:
+/**Discover-videos-app - version 3.06 - login js - Features:
  * 
- *      --> Invoking the 'preventDeafult()' to avoid refreshing
+ *      --> Fixing the 'preventDeafult()' typo
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -14,7 +14,7 @@ import Image from "next/image";
 const Login = () => {
 
     const handleLoginWithEmail = (e) => {
-        e.preventDeafult();
+        e.preventDefault()
         console.log('Loign with email');
     }
 

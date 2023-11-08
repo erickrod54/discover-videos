@@ -3,9 +3,11 @@ import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
 
-/**Discover-videos-app - version 3.06 - login js - Features:
+/**Discover-videos-app - version 3.07 - login js - Features:
  * 
- *      --> Fixing the 'preventDeafult()' typo
+ *      --> Wrapping everithing with the 'container' style
+ * 
+ *      --> Wrapping the header using the 'header'
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -19,12 +21,12 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <title>Netseries Sign In</title>
             </Head>
 
-            <header>
+            <header className={styles.header}>
                 <div className={styles.headerWrapper}>
                     <Link href="/"> {/* Note that I removed the <a> tag */}
                         <div className={styles.logoLink}>
@@ -39,6 +41,7 @@ const Login = () => {
                         </div>
                     </Link>
                 </div>
+            </header>
 
                 <main className={styles.main}>
                     <div className={styles.mainWrapper}>
@@ -56,7 +59,7 @@ const Login = () => {
                         </button>
                     </div>
                 </main>
-            </header>
+            
         </div>
     )
 }

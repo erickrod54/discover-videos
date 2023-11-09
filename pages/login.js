@@ -3,10 +3,13 @@ import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-/**Discover-videos-app - version 3.10 - login js - Features:
+/**Discover-videos-app - version 3.11 - login js - Features:
  * 
- *      --> Starting to validate email
+ *      --> Validating 'email' flow
+ * 
+ *      --> Routing from 'login' to 'dashboard'
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -17,6 +20,8 @@ const Login = () => {
     const [email, setEmail ] = useState('');
     const [userMsg, setUserMsg] = useState('');
 
+    const router = useRouter();
+
     const handleLoginWithEmail = (e) => {
         e.preventDefault()
         console.log('Loign with email');
@@ -25,8 +30,7 @@ const Login = () => {
             
             /**this flow should happen when submit */
             if (email === 'erickrod54@gmail.com') {
-                //route to dashboard
-                console.log('route to dashboard')
+                router.push('/')
             }else{
                 //show a message
                 setUserMsg('Enter a valid email address')

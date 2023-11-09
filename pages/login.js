@@ -4,11 +4,9 @@ import styles from '../styles/login.module.css'
 import Image from "next/image";
 import { useState } from "react";
 
-/**Discover-videos-app - version 3.09 - login js - Features:
+/**Discover-videos-app - version 3.10 - login js - Features:
  * 
- *      --> Adding the 'email' flow to 'handleLoginWithEmail'
- * 
- *      --> Clearing 'userMsg' once 'handleOnChangeEmail'
+ *      --> Starting to validate email
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -23,11 +21,18 @@ const Login = () => {
         e.preventDefault()
         console.log('Loign with email');
         
-        /**this flow should happen when submit */
         if (email) {
-            //route to dashboard
+            
+            /**this flow should happen when submit */
+            if (email === 'erickrod54@gmail.com') {
+                //route to dashboard
+                console.log('route to dashboard')
+            }else{
+                //show a message
+                setUserMsg('Enter a valid email address')
+            }
+            
         }else{
-            //show a message
             setUserMsg('Enter a valid email address')
         }
     }

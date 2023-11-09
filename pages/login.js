@@ -4,11 +4,11 @@ import styles from '../styles/login.module.css'
 import Image from "next/image";
 import { useState } from "react";
 
-/**Discover-videos-app - version 3.08 - login js - Features:
+/**Discover-videos-app - version 3.09 - login js - Features:
  * 
- *      --> Building 'handleOnChangeEmail'
+ *      --> Adding the 'email' flow to 'handleLoginWithEmail'
  * 
- *      --> Building 'userMsg' states
+ *      --> Clearing 'userMsg' once 'handleOnChangeEmail'
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -16,23 +16,28 @@ import { useState } from "react";
 
 const Login = () => {
 
+    const [email, setEmail ] = useState('');
     const [userMsg, setUserMsg] = useState('');
 
     const handleLoginWithEmail = (e) => {
         e.preventDefault()
         console.log('Loign with email');
-    }
-
-    const handleOnChangeEmail = (e) => {
-        console.log({e})
-        const email = e.target.value;
-
+        
+        /**this flow should happen when submit */
         if (email) {
             //route to dashboard
         }else{
             //show a message
             setUserMsg('Enter a valid email address')
         }
+    }
+
+    const handleOnChangeEmail = (e) => {
+        //console.log({e})
+        setUserMsg('')
+        const email = e.target.value;
+        setEmail(email);
+
     }
 
     return (

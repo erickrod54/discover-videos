@@ -2,12 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
+import { useState } from "react";
 
-/**Discover-videos-app - version 3.07 - login js - Features:
+/**Discover-videos-app - version 3.08 - login js - Features:
  * 
- *      --> Wrapping everithing with the 'container' style
+ *      --> Building 'handleOnChangeEmail'
  * 
- *      --> Wrapping the header using the 'header'
+ *      --> Building 'userMsg' states
  * 
  * Note: by creating the login js i ca start to write and build 
  * the Login page
@@ -15,9 +16,23 @@ import Image from "next/image";
 
 const Login = () => {
 
+    const [userMsg, setUserMsg] = useState('');
+
     const handleLoginWithEmail = (e) => {
         e.preventDefault()
         console.log('Loign with email');
+    }
+
+    const handleOnChangeEmail = (e) => {
+        console.log({e})
+        const email = e.target.value;
+
+        if (email) {
+            //route to dashboard
+        }else{
+            //show a message
+            setUserMsg('Enter a valid email address')
+        }
     }
 
     return (
@@ -49,9 +64,11 @@ const Login = () => {
                         <input 
                             type="text" 
                             placeholder="Email address" 
-                            className={styles.emailInput}/>
+                            className={styles.emailInput}
+                            onChange={handleOnChangeEmail}
+                            />
 
-                        <p className={styles.userMsg}></p>
+                        <p className={styles.userMsg}>{userMsg}</p>
                         <button 
                             onClick={handleLoginWithEmail} 
                             className={styles.loginBtn}>

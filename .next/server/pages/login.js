@@ -131,6 +131,17 @@ module.exports = require("react/jsx-dev-runtime");
 
 /***/ }),
 
+/***/ "util":
+/*!***********************!*\
+  !*** external "util" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("util");
+
+/***/ }),
+
 /***/ "fs":
 /*!*********************!*\
   !*** external "fs" ***!
@@ -161,17 +172,6 @@ module.exports = require("path");
 
 "use strict";
 module.exports = require("stream");
-
-/***/ }),
-
-/***/ "util":
-/*!***********************!*\
-  !*** external "util" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("util");
 
 /***/ }),
 

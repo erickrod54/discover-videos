@@ -4,15 +4,21 @@ import styles from '../styles/login.module.css'
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { magic } from "../lib/magic-client";
 
-/**Discover-videos-app - version 3.11 - login js - Features:
+/**Discover-videos-app - version 3.14 - login js - Features:
  * 
- *      --> Validating 'email' flow
+ *      --> Importing 'magic'
  * 
- *      --> Routing from 'login' to 'dashboard'
+ *      --> Implementing the promise to authenticate 
+ *          using 'email'
  * 
- * Note: by creating the login js i ca start to write and build 
- * the Login page
+ * Note: the try catch code block comes from the magic
+ * documentation:
+ * 
+ * by the Promise event section:
+ * 
+ *   https://magic.link/docs/api/client-side-sdks/web
 */
 
 const Login = () => {
@@ -22,7 +28,7 @@ const Login = () => {
 
     const router = useRouter();
 
-    const handleLoginWithEmail = (e) => {
+    const handleLoginWithEmail = async (e) => {
         e.preventDefault()
         console.log('Loign with email');
         
@@ -30,7 +36,20 @@ const Login = () => {
             
             /**this flow should happen when submit */
             if (email === 'erickrod54@gmail.com') {
-                router.push('/')
+
+            // log in a user by their email
+            try {
+                const didToken = await magic.auth.
+                loginWithMagicLink({
+                     email
+                });
+                console.log({didToken})
+            } catch(error) {
+                // Handle errors if required!
+                console.error('Something went wrong logging', error)
+            }
+                
+                //router.push('/')
             }else{
                 //show a message
                 setUserMsg('Enter a valid email address')

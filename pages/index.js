@@ -2,10 +2,11 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Banner, Navbar, SectionCards } from '../components'
 import { getPopularVideos, getVideos } from '../lib/videos';
+import { magic } from '../lib/magic-client';
 
-/**Discover-videos-app - version 3.01 - index js - Features:
+/**Discover-videos-app - version 3.13 - index js - Features:
  * 
- *      --> Adding the class module 'main' ro add white space
+ *      --> Testigng magic sdk 
  * 
  * Note: These are the first steps to control the query in a 
  * dynamic way
@@ -30,8 +31,9 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ disneyVideos, travelVideos, productivityVideos, popularVideos }) {
-  console.log({ disneyVideos });
+  //console.log({ disneyVideos });
 
+  console.log({ magic })
   return (
     <div className={styles.container}>
       <Head>

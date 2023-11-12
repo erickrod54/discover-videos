@@ -6,12 +6,10 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 
-/**Discover-videos-app - version 3.14 - login js - Features:
+/**Discover-videos-app - version 3.15 - login js - Features:
  * 
- *      --> Importing 'magic'
- * 
- *      --> Implementing the promise to authenticate 
- *          using 'email'
+ *      --> Building routing flow for an authenticated user
+ *          using 'didToken'.
  * 
  * Note: the try catch code block comes from the magic
  * documentation:
@@ -42,14 +40,18 @@ const Login = () => {
                 const didToken = await magic.auth.
                 loginWithMagicLink({
                      email
-                });
+                    });
+
+                    /**did token will be the user authentication */
+                    if (didToken) {
+                        router.push('/')
+                    }
                 console.log({didToken})
             } catch(error) {
                 // Handle errors if required!
                 console.error('Something went wrong logging', error)
             }
                 
-                //router.push('/')
             }else{
                 //show a message
                 setUserMsg('Enter a valid email address')

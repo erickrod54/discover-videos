@@ -2,24 +2,18 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from '../styles/login.module.css'
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 
-/**Discover-videos-app - version 3.16 - login js - Features:
+/**Discover-videos-app - version 3.17 - login js - Features:
  * 
- *      --> Setting a state for the 'Sign in'
- *          button.
+ *      --> Setting the 'Sign in'  as a 
+ *          side effect flow using 'useEffect'
  * 
- *      --> Setting the 'Sign in'  state in the 
- *          authentication flow
- * 
- * Note: the try catch code block comes from the magic
- * documentation:
- * 
- * by the Promise event section:
- * 
- *   https://magic.link/docs/api/client-side-sdks/web
+ * Note: this implementation will make the sign
+ * in button to keep the 'isLoading' state until
+ * the user get routed to the dashboard
 */
 
 const Login = () => {
@@ -29,6 +23,23 @@ const Login = () => {
     const [ isLoading, setIsLoading ] = useState(false) 
 
     const router = useRouter();
+
+    useEffect(() => {
+
+        const handleComplete = () => {
+            setIsLoading(isLoading)
+        }
+
+        router.events.on('routeChangeComplete',
+        handleComplete
+        )
+
+        return () => {
+            router.events.off('routeChangeComplete',
+            handleComplete
+            )
+        }
+    }, [router])
 
     const handleLoginWithEmail = async (e) => {
         e.preventDefault()
@@ -49,7 +60,7 @@ const Login = () => {
 
                     /**did token will be the user authentication */
                     if (didToken) {
-                        setIsLoading(isLoading)
+                        
                         router.push('/')
                     }
                 console.log({didToken})

@@ -6,10 +6,13 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 
-/**Discover-videos-app - version 3.15 - login js - Features:
+/**Discover-videos-app - version 3.16 - login js - Features:
  * 
- *      --> Building routing flow for an authenticated user
- *          using 'didToken'.
+ *      --> Setting a state for the 'Sign in'
+ *          button.
+ * 
+ *      --> Setting the 'Sign in'  state in the 
+ *          authentication flow
  * 
  * Note: the try catch code block comes from the magic
  * documentation:
@@ -23,12 +26,14 @@ const Login = () => {
 
     const [email, setEmail ] = useState('');
     const [userMsg, setUserMsg] = useState('');
+    const [ isLoading, setIsLoading ] = useState(false) 
 
     const router = useRouter();
 
     const handleLoginWithEmail = async (e) => {
         e.preventDefault()
         console.log('Loign with email');
+        setIsLoading(!isLoading)
         
         if (email) {
             
@@ -44,21 +49,25 @@ const Login = () => {
 
                     /**did token will be the user authentication */
                     if (didToken) {
+                        setIsLoading(isLoading)
                         router.push('/')
                     }
                 console.log({didToken})
             } catch(error) {
                 // Handle errors if required!
                 console.error('Something went wrong logging', error)
+                setIsLoading(isLoading)
             }
                 
             }else{
                 //show a message
                 setUserMsg('Enter a valid email address')
+                setIsLoading(isLoading)
             }
             
         }else{
             setUserMsg('Enter a valid email address')
+            setIsLoading(isLoading)
         }
     }
 
@@ -107,7 +116,7 @@ const Login = () => {
                         <button 
                             onClick={handleLoginWithEmail} 
                             className={styles.loginBtn}>
-                                Sign In
+                                {isLoading ? 'Loading' : 'Sign In'}
                         </button>
                     </div>
                 </main>

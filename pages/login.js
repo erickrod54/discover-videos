@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 
-/**Discover-videos-app - version 3.17 - login js - Features:
+/**Discover-videos-app - version 3.18 - login js - Features:
  * 
- *      --> Setting the 'Sign in'  as a 
- *          side effect flow using 'useEffect'
+ *      --> Hnadling 'routeChangeError' inside
+ *          the 'useEffect'
  * 
  * Note: this implementation will make the sign
  * in button to keep the 'isLoading' state until
@@ -33,9 +33,15 @@ const Login = () => {
         router.events.on('routeChangeComplete',
         handleComplete
         )
+        router.events.on('routeChangeError',
+        handleComplete
+        )
 
         return () => {
             router.events.off('routeChangeComplete',
+            handleComplete
+            )
+            router.events.on('routeChangeError',
             handleComplete
             )
         }

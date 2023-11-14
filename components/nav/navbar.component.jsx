@@ -1,24 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./navbar.module.css"
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { magic } from "../../lib/magic-client";
 
-/**Discover-videos-app - version 1.18  - Navbar js - Features:
+/**Discover-videos-app - version 3.19  - Navbar js - Features:
  * 
- *      --> Fixing width and height of the logo.
+ *      --> Retreving metadata from 'magic'.
  * 
- * Note: This is part of the initial composition of the app,
- * after this step every component will developed indiviually
+ *      --> Building state to set the user email
+ * 
+ * Note: This flow will be on an authenticated user
 */
 
 const Navbar = (props) => {
 
-    const { username } = props;
+    //const { username } = props;
+
+    const [ showDropdown, setShowDropDown ] = useState(false);
+    const [ username, setUsername ] = useState('')
 
     const router = useRouter();
 
-    const [ showDropdown, setShowDropDown ] = useState(false);
+    useEffect(() => {
+        async function getUsername() {
+          try {
+            const { email } = await magic.user.getMetadata();
+            console.log({ email })
+            if (email) {
+                setUsername(email)
+            }
+          } catch (error) {
+            console.log("Error retrieving email:", error);
+          }
+        }
+        getUsername();
+      }, []);
+
 
     const handleOnClickHome  = (e) => {
         e.preventDefault()

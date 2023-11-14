@@ -5,11 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { magic } from "../../lib/magic-client";
 
-/**Discover-videos-app - version 3.19  - Navbar js - Features:
+/**Discover-videos-app - version 3.20  - Navbar js - Features:
  * 
- *      --> Retreving metadata from 'magic'.
- * 
- *      --> Building state to set the user email
+ *      --> Implementing 'handleSignOut' feature
  * 
  * Note: This flow will be on an authenticated user
 */
@@ -38,6 +36,16 @@ const Navbar = (props) => {
         getUsername();
       }, []);
 
+    const handleSignOut = async(e) => {
+        e.preventDefault();
+
+        try {
+            await magic.user.logout();
+            console.log(await magic.user.isLoggedIn()); // => `false`
+            router.push('/login')
+          }  catch (error) {
+            console.log("Error retrieving email:", error);        }
+    }
 
     const handleOnClickHome  = (e) => {
         e.preventDefault()
@@ -76,9 +84,9 @@ const Navbar = (props) => {
                     </button>
                     { showDropdown &&
                     <div className={styles.navDropdown}>
-                        <Link href='/login' className={styles.linkName}>
+                            <a className={styles.linkName} onClick={handleSignOut}>
                                 Sign Out
-                        </Link>
+                            </a>
                         <div className={styles.lineWrapper}></div>
                     </div>
                     

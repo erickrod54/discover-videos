@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
+import { Loading } from "../components/index";
 
-/**Discover-videos-app - version 4.01  - pages > _app.js - 
+/**Discover-videos-app - version 4.03  - pages > _app.js - 
  * Features:
  * 
- *      --> Solving 'flicker' bug when user is trying 
- *          to access without getting auth
+ *      --> Implementing Loading Component
  * 
  * Note: the test is made when i try to manually set
  * the url to the / directory
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  return isLoading ? <div>Loading...</div> : <Component {...pageProps} />;
+  return isLoading ? <Loading /> : <Component {...pageProps} />;
 }
 
 export default MyApp;

@@ -4,10 +4,11 @@ import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
 import { Loading } from "../components/index";
 
-/**Discover-videos-app - version 4.03  - pages > _app.js - 
+/**Discover-videos-app - version 4.04  - pages > _app.js - 
  * Features:
  * 
- *      --> Implementing Loading Component
+ *      --> Setting temporal route "/video/abc"
+ *          to work in the single video page
  * 
  * Note: the test is made when i try to manually set
  * the url to the / directory
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }) {
       const isLoggedIn = await magic.user.isLoggedIn();
       if (isLoggedIn) {
         // route to /
-        router.push("/");
+        router.push("/video/abc");
       } else {
         // route to /login
         router.push("/login");

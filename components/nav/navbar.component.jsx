@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { magic } from "../../lib/magic-client";
 
-/**Discover-videos-app - version 3.20  - Navbar js - Features:
+/**Discover-videos-app - version 4.05   - Navbar js - Features:
  * 
- *      --> Implementing 'handleSignOut' feature
+ *      --> Changing 'getMetadata()' for 'getInfo()'
  * 
  * Note: This flow will be on an authenticated user
 */
@@ -24,7 +24,7 @@ const Navbar = (props) => {
     useEffect(() => {
         async function getUsername() {
           try {
-            const { email } = await magic.user.getMetadata();
+            const { email } = await magic.user.getInfo();
             console.log({ email })
             if (email) {
                 setUsername(email)

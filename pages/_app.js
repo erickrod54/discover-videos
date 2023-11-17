@@ -4,14 +4,13 @@ import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
 import { Loading } from "../components/index";
 
-/**Discover-videos-app - version 4.04  - pages > _app.js - 
+/**Discover-videos-app - version 4.05  - pages > _app.js - 
  * Features:
  * 
- *      --> Setting temporal route "/video/abc"
- *          to work in the single video page
+ *      --> Commenting temporarly redirection and Loading 
  * 
- * Note: the test is made when i try to manually set
- * the url to the / directory
+ * Note: this is made in order to work in the single video
+ * page
 */
 
 function MyApp({ Component, pageProps }) {
@@ -19,17 +18,17 @@ function MyApp({ Component, pageProps }) {
   const [ isLoading, setIsLoading ] = useState(true) 
 
   useEffect(() => {
-    const handleLoggedIn = async () => {
+/**    const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
       if (isLoggedIn) {
         // route to /
-        router.push("/video/abc");
+        router.push("/");
       } else {
         // route to /login
         router.push("/login");
       }
     };
-    handleLoggedIn();
+    handleLoggedIn(); */
   }, []);
 
   useEffect(() => {
@@ -45,7 +44,8 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  return isLoading ? <Loading /> : <Component {...pageProps} />;
+  //return isLoading ? <Loading /> : <Component {...pageProps} />;
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

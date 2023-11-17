@@ -1,10 +1,12 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 
 /**Discover-videos-app - version 4.03  - [videoId].js - 
  * Features:
  * 
- *      --> Building dynamic route to video page
+ *      --> Starting tests getting the 'videoId'
+ *          from the route object
  * 
  * Note: the test is made when i try to manually set
  * the url to the / directory
@@ -13,8 +15,12 @@ import React from "react";
 
 const Video = () => {
 
+    const router = useRouter();
+    
+    console.log({router})
+
     return(
-        <h2>Video Page</h2>
+        <h2>Video Page {router.query.videoId}</h2>
     )
 }
 

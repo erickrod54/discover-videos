@@ -1,9 +1,12 @@
+import Link from "next/link";
 import Card from "./card.component";
 import styles from './section.cards.module.css';
 
-/**Discover-videos-app - version 2.14 - SectionCards- Features:
+/**Discover-videos-app - version 4.05 - SectionCards- Features:
  * 
- *      --> Reciving 'size' as a prop to change it dynamiclly.
+ *      --> Implementing 'Link' component from next.
+ * 
+ *      --> Getting dynamicly the 'id'
  * 
  * Note: Refactoring 'Card' render in order to receive and render 
  * an array
@@ -23,7 +26,9 @@ const SectionCards = (props) => {
                 {videos.map((video, index) => {
                     const { imgUrl } = video;
                     return(
-                        <Card key={index} imgUrl={imgUrl} size={size}/>
+                        <Link href={`/video/${video.id}`}>
+                            <Card key={index} imgUrl={imgUrl} size={size}/>
+                        </Link>
                     )
                 })}
             </div>

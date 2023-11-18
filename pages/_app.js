@@ -4,10 +4,10 @@ import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
 import { Loading } from "../components/index";
 
-/**Discover-videos-app - version 4.05  - pages > _app.js - 
+/**Discover-videos-app - version 4.06  - pages > _app.js - 
  * Features:
  * 
- *      --> Commenting temporarly redirection and Loading 
+ *      --> Uncommenting redirection and Loading 
  * 
  * Note: this is made in order to work in the single video
  * page
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   const [ isLoading, setIsLoading ] = useState(true) 
 
   useEffect(() => {
-/**    const handleLoggedIn = async () => {
+   const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
       if (isLoggedIn) {
         // route to /
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         router.push("/login");
       }
     };
-    handleLoggedIn(); */
+    handleLoggedIn(); 
   }, []);
 
   useEffect(() => {
@@ -44,8 +44,8 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  //return isLoading ? <Loading /> : <Component {...pageProps} />;
-  return <Component {...pageProps} />;
+  return isLoading ? <Loading /> : <Component {...pageProps} />;
+  
 }
 
 export default MyApp;

@@ -1,10 +1,11 @@
 import React from "react";
 import styles from '../components/banner.module.css'
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-/**Discover-videos-app - version 1.18  - Banner js - Features:
+/**Discover-videos-app - version 4.06  - Banner js - Features:
  * 
- *      --> Fixing first letter.
+ *      --> Building test route for the banner 'play button'.
  * 
  * Note: so fas props has been passed as placehodlers 
  * from the main component in the index js
@@ -12,10 +13,13 @@ import Image from "next/image";
 
 const Banner = (props) => {
 
-    const {  title, subtitle, imgUrl } = props;
+    const {  title, subtitle, imgUrl, videoId } = props;
+
+    const router = useRouter()
 
    const handleOnPlay = () => {
         console.log('Play!')
+        router.push(`video/${videoId}`)
    }
     
     return(

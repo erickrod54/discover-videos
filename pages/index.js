@@ -4,9 +4,10 @@ import { Banner, Navbar, SectionCards } from '../components'
 import { getPopularVideos, getVideos } from '../lib/videos';
 import { magic } from '../lib/magic-client';
 
-/**Discover-videos-app - version 3.13 - index js - Features:
+/**Discover-videos-app - version 4.06 - index js - Features:
  * 
- *      --> Testigng magic sdk 
+ *      --> Hardcoding 'videoId' in order to test it
+ *          at banner.
  * 
  * Note: These are the first steps to control the query in a 
  * dynamic way
@@ -46,6 +47,7 @@ export default function Home({ disneyVideos, travelVideos, productivityVideos, p
 
         <Navbar username='netseriesuser@gmail.com'/>
         <Banner 
+          videoId='d9M3j5d0KbQ'
           title='Clifford the red dog' 
           subtitle='a very cute dog' 
           imgUrl={'/statics/clifford.the.red.dog.png'}/>

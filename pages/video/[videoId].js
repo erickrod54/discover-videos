@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
+import Modal from 'react-modal';
 
-
-/**Discover-videos-app - version 4.03  - [videoId].js - 
+/**Discover-videos-app - version 4.07  - [videoId].js - 
  * Features:
  * 
- *      --> Starting tests getting the 'videoId'
- *          from the route object
+ *      -->  Implementing 'Modal' from react-modal
  * 
  * Note: the test is made when i try to manually set
  * the url to the / directory
 */
 
+Modal.setAppElement('#__next')
 
 const Video = () => {
 
@@ -20,7 +20,14 @@ const Video = () => {
     console.log({router})
 
     return(
-        <h2>Video Page {router.query.videoId}</h2>
+        <div>
+         video page {router.query.videoId}   
+        <Modal
+            isOpen={true} contentLabel="Watch the video"
+      >
+        <div>Modal Body</div>
+        </Modal>
+        </div>
     )
 }
 

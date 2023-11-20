@@ -68,7 +68,7 @@ eval("// Exports\nmodule.exports = {\n\t\"container\": \"navbar_container__OLSK_
   \**************************************/
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy92aWRlby92aWRlby5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7O0FBRUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXRmbGl4LXN0YXJ0ZXIvLi9wYWdlcy92aWRlby92aWRlby5tb2R1bGUuY3NzPzIyN2UiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./pages/video/video.module.css\n");
+eval("// Exports\nmodule.exports = {\n\t\"overlay\": \"video_overlay__xPaV8\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy92aWRlby92aWRlby5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV0ZmxpeC1zdGFydGVyLy4vcGFnZXMvdmlkZW8vdmlkZW8ubW9kdWxlLmNzcz8yMjdlIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIEV4cG9ydHNcbm1vZHVsZS5leHBvcnRzID0ge1xuXHRcIm92ZXJsYXlcIjogXCJ2aWRlb19vdmVybGF5X194UGFWOFwiXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/video/video.module.css\n");
 
 /***/ }),
 

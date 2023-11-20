@@ -3,10 +3,10 @@ import React from "react";
 import Modal from 'react-modal';
 import styles from './video.module.css'
 
-/**Discover-videos-app - version 4.08  - [videoId].js - 
+/**Discover-videos-app - version 4.10  - [videoId].js - 
  * Features:
  * 
- *      -->  Implementing 'Modal' from react-modal
+ *      --> Adding styles 'container' and 'overlay'
  * 
  * Note: reference docs:
  * 
@@ -22,9 +22,9 @@ const Video = () => {
     console.log({router})
 
     return(
-        <div>
-         video page {router.query.videoId}   
+        <div className={styles.container}>
         <Modal
+            className={styles.modal}
             isOpen={true} contentLabel="Watch the video"
             onRequestClose={() => router.back()}
             overlayClassName={styles.overlay}

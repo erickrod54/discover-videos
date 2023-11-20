@@ -1,10 +1,27 @@
-/**Discover-videos-app - version 4.09  - video.module.css - 
+/**Discover-videos-app - version 4.10  - video.module.css - 
  * Features:
  * 
- *      -->  Writting overlay class
+ *      -->  Writting 'modal' class
  * 
  * Note: In this file will be written 'overlay'
 */
+
+.modal {
+    position: absolute;
+    /** centers modal **/
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  
+    width: 800px;
+    bottom: 400px;
+    background-color: var(--black40);
+    top: 10%;
+  
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid var(--shadow10);
+  }
 
 .overlay {  
     top: 0;  

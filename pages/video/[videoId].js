@@ -1,14 +1,16 @@
 import { useRouter } from "next/router";
 import React from "react";
 import Modal from 'react-modal';
+import styles from './video.module.css'
 
-/**Discover-videos-app - version 4.07  - [videoId].js - 
+/**Discover-videos-app - version 4.08  - [videoId].js - 
  * Features:
  * 
  *      -->  Implementing 'Modal' from react-modal
  * 
- * Note: the test is made when i try to manually set
- * the url to the / directory
+ * Note: reference docs:
+ * 
+ *  https://reactcommunity.org/react-modal/
 */
 
 Modal.setAppElement('#__next')
@@ -24,6 +26,8 @@ const Video = () => {
          video page {router.query.videoId}   
         <Modal
             isOpen={true} contentLabel="Watch the video"
+            onRequestClose={() => router.back()}
+            overlayClassName={styles.overlay}
       >
         <div>Modal Body</div>
         </Modal>

@@ -1,7 +1,16 @@
-/**Discover-videos-app - version 4.08  - video.module.css - 
+/**Discover-videos-app - version 4.09  - video.module.css - 
  * Features:
  * 
- *      -->  File created to avoid error
+ *      -->  Writting overlay class
  * 
  * Note: In this file will be written 'overlay'
 */
+
+.overlay {  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    width: 100%;  
+    height: 100vh;
+  }

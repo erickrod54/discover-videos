@@ -3,10 +3,10 @@ import React from "react";
 import Modal from 'react-modal';
 import styles from './video.module.css'
 
-/**Discover-videos-app - version 4.11  - [videoId].js - 
+/**Discover-videos-app - version 4.12  - [videoId].js - 
  * Features:
  * 
- *      --> Adding youtube 'iframe' to the modal
+ *      --> Taking out the controls of the youtube player
  * 
  * Note: reference docs:
  * 
@@ -30,7 +30,7 @@ const Video = () => {
             overlayClassName={styles.overlay}
       >
       <iframe id="ytplayer" type="text/html" width="800" height="500"
-        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com&controls=0&rel=1"
         frameborder="0">
       </iframe>  
       </Modal>

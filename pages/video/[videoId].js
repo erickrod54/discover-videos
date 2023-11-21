@@ -3,11 +3,10 @@ import React from "react";
 import Modal from 'react-modal';
 import styles from './video.module.css'
 
-/**Discover-videos-app - version 4.13  - [videoId].js - 
+/**Discover-videos-app - version 4.14  - [videoId].js - 
  * Features:
  * 
- *      --> Replacing youtube 'example id' with 
- *          app videoId
+ *      --> Adding 'videoPlayer' styles
  * 
  * Note: reference docs:
  * 
@@ -30,7 +29,12 @@ const Video = () => {
             onRequestClose={() => router.back()}
             overlayClassName={styles.overlay}
       >
-      <iframe id="ytplayer" type="text/html" width="800" height="500"
+      <iframe 
+        id="ytplayer" 
+        className={styles.videoPlayer}
+        type="text/html" 
+        width="800" 
+        height="500"
         src={`https://www.youtube.com/embed/${router.query.videoId}?autoplay=1&origin=http://example.com&controls=0&rel=1`}
         frameborder="0">
       </iframe>  

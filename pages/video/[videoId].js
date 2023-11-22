@@ -4,21 +4,25 @@ import Modal from 'react-modal';
 import styles from './video.module.css'
 import clsx from 'classnames';
 
-/**Discover-videos-app - version 4.15  - [videoId].js - 
+/**Discover-videos-app - version 4.16  - [videoId].js - 
  * Features:
  * 
- *      --> Adding structure for 'modalBody'
+ *      --> Implementing 'ISR' (Incremental Server Side Regeneration)
  * 
- * Note: reference docs:
+ * Note: By Implemnenting 'getStaticProps()' and 
+ * 'getStaticPaths' the 'ISR' is being applied and the videos
+ * id addded to 'getStaticPaths' will make a super fast loading
+ * of those resources
  * 
- *  https://reactcommunity.org/react-modal/
+ * for now im getting the video info hardcoded but idealy will
+ * como from the API later 
 */
 
 Modal.setAppElement('#__next')
 
-const Video = () => {
-
-    const router = useRouter();
+export async function getStaticProps() {
+    
+    //data to fetch from API;
 
     const video = {
         title: 'Hi cool Marvel',
@@ -27,6 +31,33 @@ const Video = () => {
         channelTitle: 'Marvel Studios',
         viewCount:10000    
     }
+    
+    return{
+        props:{
+            video,
+        },
+        /**Next js will attempt to regenarate the page
+         * when the request comes in at most once every
+         * 10 seconds
+         */
+        revalidate:10, // in seconds
+    }
+}
+
+export async function getStaticPaths() {
+    const listOfVideos = ["udKE1ksKWDE", "daV3T2biCfA", "vGXERI3UW3k"];
+    const paths = listOfVideos.map((videoId) => ({
+      params: { videoId },
+    }));
+  
+    return { paths, fallback: "blocking" };
+  }
+
+const Video = ({ video }) => {
+
+    const router = useRouter();
+
+
     
     console.log({router})
 

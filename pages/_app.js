@@ -4,10 +4,11 @@ import { magic } from "../lib/magic-client";
 import "../styles/globals.css";
 import { Loading } from "../components/index";
 
-/**Discover-videos-app - version 4.06  - pages > _app.js - 
+/**Discover-videos-app - version 4.17  - pages > _app.js - 
  * Features:
  * 
- *      --> Uncommenting redirection and Loading 
+ *      --> Commenting temporal 'useEffect' for log in
+ *          to test youtube data API
  * 
  * Note: this is made in order to work in the single video
  * page
@@ -15,10 +16,11 @@ import { Loading } from "../components/index";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [ isLoading, setIsLoading ] = useState(true) 
+  const [ isLoading, setIsLoading ] = useState(false) 
 
   useEffect(() => {
-   const handleLoggedIn = async () => {
+   /**
+    * const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
       if (isLoggedIn) {
         // route to /
@@ -29,6 +31,7 @@ function MyApp({ Component, pageProps }) {
       }
     };
     handleLoggedIn(); 
+    */
   }, []);
 
   useEffect(() => {

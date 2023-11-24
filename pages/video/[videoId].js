@@ -5,11 +5,11 @@ import styles from './video.module.css'
 import clsx from 'classnames';
 import { getYoutubeVideoById } from "../../lib/videos";
 
-/**Discover-videos-app - version 4.17  - [videoId].js - 
+/**Discover-videos-app - version 4.18  - [videoId].js - 
  * Features:
  * 
- *      --> Destructuring 'statistics' as the API shows
- *          to render the data
+ *      --> Using the context prop in order to get 
+ *          info matching with 'videoId'
  * 
  * Note: commenting also the dummy data object in order
  * to feth it from the API
@@ -17,7 +17,7 @@ import { getYoutubeVideoById } from "../../lib/videos";
 
 Modal.setAppElement('#__next')
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
     
     //data to fetch from API;
 
@@ -31,10 +31,10 @@ export async function getStaticProps() {
     }
      */
 
-    const videoId = 'd9M3j5d0KbQ'
+    console.log({ context })
+    const videoId = context.params.videoId;
     
     const videoArray = await getYoutubeVideoById(videoId)
-
    
 
     return{

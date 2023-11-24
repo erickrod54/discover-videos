@@ -4,12 +4,12 @@ import Modal from 'react-modal';
 import styles from './video.module.css'
 import clsx from 'classnames';
 import { getYoutubeVideoById } from "../../lib/videos";
+import { Navbar } from "../../components";
 
-/**Discover-videos-app - version 4.18  - [videoId].js - 
+/**Discover-videos-app - version 4.19  - [videoId].js - 
  * Features:
  * 
- *      --> Using the context prop in order to get 
- *          info matching with 'videoId'
+ *      --> Adding the 'Navbar'
  * 
  * Note: commenting also the dummy data object in order
  * to feth it from the API
@@ -70,6 +70,7 @@ const Video = ({ video }) => {
 
     return(
         <div className={styles.container}>
+        <Navbar />
         <Modal
             className={styles.modal}
             isOpen={true} contentLabel="Watch the video"

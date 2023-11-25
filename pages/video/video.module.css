@@ -1,7 +1,7 @@
-/**Discover-videos-app - version 4.19  - video.module.css - 
+/**Discover-videos-app - version 4.20  - video.module.css - 
  * Features:
  * 
- *      -->  Writting 'top' class 15%
+ *      -->  Writting vh for 'col1'
  * 
  * Note: in order to ad more space between 
  the navbar and the modal
@@ -63,7 +63,7 @@
   }
   
   .col1 {
-    max-height: 23rem /* 208px */;
+    max-height: 50vh /* 208px */;
     overflow-y: hidden;
     overflow-y: scroll;
   }

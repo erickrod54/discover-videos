@@ -1,7 +1,7 @@
-/**Discover-videos-app - version 4.20  - video.module.css - 
+/**Discover-videos-app - version 5.00  - video.module.css - 
  * Features:
  * 
- *      -->  Writting vh for 'col1'
+ *      -->  Writting media query to min 1024px
  * 
  * Note: in order to ad more space between 
  the navbar and the modal
@@ -114,8 +114,10 @@
     margin: 0px;
   }
   
-  @media (max-width: 768px) {
+  @media (min-width: 1024px) {
     .modal {
-      width: 100%;
+      top: 15%;
+      bottom: 40px;
+      width: 50%;
     }
   }

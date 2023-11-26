@@ -6,10 +6,10 @@ import clsx from 'classnames';
 import { getYoutubeVideoById } from "../../lib/videos";
 import { Navbar } from "../../components";
 
-/**Discover-videos-app - version 4.19  - [videoId].js - 
+/**Discover-videos-app - version 5.00  - [videoId].js - 
  * Features:
  * 
- *      --> Adding the 'Navbar'
+ *      --> Commenting logs
  * 
  * Note: commenting also the dummy data object in order
  * to feth it from the API
@@ -31,7 +31,7 @@ export async function getStaticProps(context) {
     }
      */
 
-    console.log({ context })
+    //console.log({ context })
     const videoId = context.params.videoId;
     
     const videoArray = await getYoutubeVideoById(videoId)
@@ -64,7 +64,7 @@ const Video = ({ video }) => {
 
 
     
-    console.log({router})
+    //console.log({router})
 
     const { title, publishTime, description, channelTitle, statistics: { viewCount } } = video
 
